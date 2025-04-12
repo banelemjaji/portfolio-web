@@ -1,19 +1,27 @@
+// src/App.jsx
 import React from 'react';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import { Routes, Route } from 'react-router-dom'; // Import Routes and Route
+import Navbar from './components/Navbar.jsx'; // Import Navbar component
+import Footer from './components/Footer.jsx';
+import HomePage from './pages/Home.jsx';         // Import page components
+import BlogListPage from './pages/BlogListPage.jsx';
+import BlogPostPage from './pages/BlogPostPage.jsx';
+import NotFoundPage from './pages/NotFoundPage.jsx';
 
 function App() {
   return (
-    <div className="bg-[#1b1f38] min-h-screen text-[#c3c7e4] font-['Poppins', sans-serif]">
+    // Apply background and default text color directly
+    <div className="bg-[#0C1821] min-h-screen text-slate-200 font-['Poppins',_sans-serif] flex flex-col">
       <Navbar />
-      <main className="pt-16"> {/* Add padding-top to offset fixed navbar */}
-        {/* Other page content will go here */}
-        <div className="container mx-auto p-4">
-          <h1 className="text-3xl font-bold text-white my-4">Portfolio Content Area</h1>
-          <p>Your main sections (Hero, Projects, Skills, Contact) will be added here.</p>
-          {/* Example to take up space */}
-          <div className="h-[150vh] bg-opacity-10 bg-white rounded mt-4 p-4">Scroll down to see footer...</div>
-        </div>
+      {/* Adjust pt based on final navbar height if needed */}
+      {/* Increased padding top to account for spaced navbar */}
+      <main className="flex-grow pt-24 md:pt-28">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blog" element={<BlogListPage />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
       </main>
       <Footer />
     </div>
