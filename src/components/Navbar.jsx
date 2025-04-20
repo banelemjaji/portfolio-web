@@ -14,8 +14,8 @@ function Navbar() {
         { href: '#home', text: 'Home', type: 'scroll' },
         { href: '#projects', text: 'Projects', type: 'scroll' },
         { href: '#skills', text: 'Skills', type: 'scroll' },
-        { href: '/blog', text: 'Blog', type: 'route' },
         { href: '#contact', text: 'Contact', type: 'scroll' },
+        { href: '/blog', text: 'Blog', type: 'route' },
     ];
 
      const renderNavLink = (link, isMobile = false) => {
