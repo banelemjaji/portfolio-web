@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 // Custom components and hooks
 import { useBlogPosts } from '../hooks/useBlogPosts';
-import BlogPostCard from '../components/BlogPostCard';
-import BlogPost from '../components/BlogPost';
+import BlogPostCard from '../components/BlogPostCard.jsx';
+import BlogPost from '../components/BlogPost.jsx';
 
 // Blog posts configuration
 const blogPosts = [
@@ -55,7 +55,7 @@ export default function Blog() {
       {!selectedPost ? (
         // Blog listing view
         <>
-          <div className="mb-12">
+          <div>
             <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-3 tracking-tight">
               Blog
             </h1>

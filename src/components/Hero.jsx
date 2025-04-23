@@ -5,45 +5,10 @@ import resumePdf from '../assets/pdf/Banele_Mjaji_CV.pdf';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
-const titles = ["Full Stack Developer", "Mobile Developer"];
-const typingSpeed = 90;
-const pause = 1500;
+
 
 function Hero() {
-    const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
-    const [displayedTitle, setDisplayedTitle] = useState('');
-    const [isDeleting, setIsDeleting] = useState(false);
-    const [typingTimeout, setTypingTimeout] = useState(typingSpeed);
-
-    useEffect(() => {
-        // Typewriter effect logic remains the same...
-        const handleTyping = () => {
-            const fullTitle = titles[currentTitleIndex];
-            const currentLength = displayedTitle.length;
-
-            if (isDeleting) {
-                setDisplayedTitle(fullTitle.substring(0, currentLength - 1));
-                setTypingTimeout(typingSpeed / 2);
-            } else {
-                setDisplayedTitle(fullTitle.substring(0, currentLength + 1));
-                setTypingTimeout(typingSpeed);
-            }
-
-            if (!isDeleting && currentLength === fullTitle.length) {
-                setTypingTimeout(pause);
-                setIsDeleting(true);
-            } else if (isDeleting && currentLength === 0) {
-                setIsDeleting(false);
-                setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titles.length);
-                setTypingTimeout(typingSpeed * 2);
-            }
-        };
-
-        const timer = setTimeout(handleTyping, typingTimeout);
-        return () => clearTimeout(timer);
-    }, [displayedTitle, isDeleting, currentTitleIndex, typingTimeout]);
-
-
+    
     return (
         // Use arbitrary background color
         <section id="home" className="flex items-center justify-center min-h-[calc(100vh-5rem)] bg-[#0C1821] py-16 px-4 md:px-10 overflow-hidden">
@@ -57,9 +22,8 @@ function Hero() {
                     </h1>
                     {/* Use slate-400 and arbitrary accent color */}
                     <h2 className="text-2xl md:text-3xl font-normal text-slate-400 mb-4 min-h-[2.5em]">
-                        a <span className="text-[#89FFAA] font-medium">{displayedTitle}</span>
-                        <span className="animate-pulse text-[#89FFAA]">|</span> {/* Cursor color */}
-                    </h2>
+  a <span className="text-[#89FFAA] font-medium">Full Stack Developer</span>
+</h2>
 
                     {/* Paragraphs */}
                     <div className="space-y-4">
