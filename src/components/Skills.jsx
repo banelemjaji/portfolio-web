@@ -20,7 +20,7 @@ function Skills() {
 
   return (
     <section id="skills" className="py-20 px-4 md:px-10 bg-[#0C1821]">
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-4xl">
 
         <h2 className="text-3xl md:text-4xl font-semibold text-center text-slate-100 mb-6">
         <span className="text-[#89FFAA]">Skills</span>
@@ -32,7 +32,7 @@ function Skills() {
         </p>
 
         {/* Icon Grid - Adjusted grid columns and gap */}
-        <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-x-6 gap-y-12 justify-center">
+        <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-x-6 gap-y-12 justify-center" aria-label="Skills Grid">
           {skillsToShow.map((skillName) => {
             // Attempt to find the icon data using the skillName as the key
             const iconData = skillIcons[skillName]; // Case-sensitive match
@@ -75,7 +75,10 @@ function Skills() {
                     bg-[#172A3A] rounded-lg p-3 sm:p-4 border border-white/10 shadow-md
                     flex items-center justify-center aspect-square
                     transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-[#89FFAA]/10 group-hover:border-[#89FFAA]/50
+                    focus:outline-none focus-visible:ring-2 focus-visible:ring-[#89FFAA]
                   "
+                  tabIndex={0}
+                  aria-label={skillName}
                 >
                   {/* Icon */}
                   {sizedSvg}

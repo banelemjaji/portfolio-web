@@ -1,7 +1,5 @@
-// src/components/Projects.jsx
 import React from 'react';
-import ProjectCard from './ProjectCard'; // Import the card component
-
+import ProjectCard from './ProjectCard'; 
 // --- Project Data ---
 // IMPORTANT: Replace placeholder imageUrls with actual paths to your images
 // e.g., import barberShopImg from '../assets/images/barbershop_app.jpg';
@@ -12,6 +10,7 @@ const projectsData = [
     description: "A booking app for appointment bookings and management.",
     technologies: ["Java", "Firebase", "Android"],
     githubLink: "https://github.com/banelemjaji/barbershop_project",
+    liveLink: "https://barbershop-demo.example.com", // Replace with actual live link or null
     imageUrl: null // Replace with actual image import or URL
   },
   {
@@ -19,6 +18,7 @@ const projectsData = [
     description: "Automatically organize files based on their content.",
     technologies: ["Python", "Automation"],
     githubLink: "https://github.com/banelemjaji/file-organizer",
+    liveLink: null, // No live link
     imageUrl: null // Replace with actual image import or URL
   },
   {
@@ -26,6 +26,7 @@ const projectsData = [
     description: "A bus tracking app built using Flutter with real-time updates.",
     technologies: ["Flutter", "Dart", "Firebase"], // Added Firebase assumption
     githubLink: "https://github.com/banelemjaji/bus_app",
+    liveLink: null, // No live link
     imageUrl: null // Replace with actual image import or URL
   },
   // Add more projects here if you have them
@@ -48,15 +49,16 @@ function Projects() {
         </p>
         {/* --- END DESCRIPTION PARAGRAPH --- */}
 
-        {/* Responsive Grid for Project Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Accessible Two-column Grid for Project Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12" aria-label="Project Cards Grid">
           {projectsData.map((project, index) => (
             <ProjectCard
-              key={index} // Using index as key is okay if list is static
+              key={index}
               title={project.title}
               description={project.description}
               technologies={project.technologies}
               githubLink={project.githubLink}
+              liveLink={project.liveLink}
               imageUrl={project.imageUrl}
             />
           ))}

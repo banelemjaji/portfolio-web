@@ -73,10 +73,10 @@ function Contact() {
         </p>
 
         {/* Contact Form */}
-        <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+        <form ref={formRef} onSubmit={handleSubmit} className="space-y-6" aria-label="Contact Form">
           {/* Name Input */}
           <div>
-            <label htmlFor="from_name" className="block text-sm font-medium text-slate-300 mb-1">Name</label>
+            <label htmlFor="from_name" className="block text-sm font-medium text-slate-300 mb-1" aria-label="Your Name">Name</label>
             <input
               type="text"
               name="from_name" // Should match EmailJS template variable
@@ -91,7 +91,7 @@ function Contact() {
 
           {/* Email Input */}
           <div>
-            <label htmlFor="reply_to" className="block text-sm font-medium text-slate-300 mb-1">Email</label>
+            <label htmlFor="reply_to" className="block text-sm font-medium text-slate-300 mb-1" aria-label="Your Email">Email</label>
             <input
               type="email"
               name="reply_to" // Should match EmailJS template variable for reply-to
@@ -106,7 +106,7 @@ function Contact() {
 
           {/* Message Textarea */}
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-1">Message</label>
+            <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-1" aria-label="Your Message">Message</label>
             <textarea
               name="message" // Should match EmailJS template variable
               id="message"
@@ -123,7 +123,7 @@ function Contact() {
           <div className="text-center">
             {/* Status Message Area */}
             {submitStatus.message && (
-              <p className={`mb-4 text-sm ${submitStatus.success ? 'text-green-400' : 'text-red-400'}`}>
+              <p className={`mb-4 text-sm ${submitStatus.success ? 'text-green-400' : 'text-red-400'} animate-fade-in`} aria-live="polite" aria-atomic="true">
                 {submitStatus.message}
               </p>
             )}

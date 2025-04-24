@@ -1,9 +1,11 @@
 // src/components/Navbar.jsx
 import React, { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 function Navbar() {
+    const navigate = useNavigate();
+    const location = useLocation();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const toggleMobileMenu = () => {
@@ -22,8 +24,8 @@ function Navbar() {
         // Define base classes and apply colors directly
         const baseClasses = "relative transition-colors duration-300";
         // Use arbitrary values for text colors and accent hover/underline
-        const desktopClasses = `${baseClasses} text-slate-200 hover:text-[#89FFAA] after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-[#89FFAA] after:transition-all after:duration-300 hover:after:w-full`;
-        const mobileClasses = `${baseClasses} block text-center py-3 px-4 text-slate-200 hover:bg-white/10 hover:text-[#89FFAA]`;
+        const desktopClasses = `${baseClasses} text-slate-200 hover:text-[#89FFAA] focus:text-[#89FFAA] after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-[#89FFAA] after:transition-all after:duration-300 hover:after:w-full focus:after:w-full focus:outline-none`;
+        const mobileClasses = `${baseClasses} block text-center py-3 px-4 text-slate-200 hover:bg-white/10 hover:text-[#89FFAA] focus:text-[#89FFAA] focus:outline-none`;
 
         const classes = isMobile ? mobileClasses : desktopClasses;
 
@@ -41,8 +43,41 @@ function Navbar() {
                 </Link>
             );
         } else {
+            // For scroll links, intercept click for cross-route anchor navigation
             return (
-                <a key={link.text} href={link.href} className={classes} onClick={handleClick}>
+                <a
+                    key={link.text}
+                    href={link.href}
+                    className={classes}
+                    onClick={e => {
+                        e.preventDefault();
+                        if (isMobileMenuOpen) {
+                            toggleMobileMenu();
+                        }
+                        const anchor = link.href.replace('#', '');
+                        if (location.pathname !== '/') {
+                            // Navigate to home, then scroll after navigation
+                            navigate('/', { replace: false });
+                            // Wait for navigation, then scroll
+                            setTimeout(() => {
+                                const el = document.getElementById(anchor);
+                                if (el) {
+                                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                } else {
+                                    window.location.hash = link.href;
+                                }
+                            }, 100);
+                        } else {
+                            // Already on home, just scroll
+                            const el = document.getElementById(anchor);
+                            if (el) {
+                                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            } else {
+                                window.location.hash = link.href;
+                            }
+                        }
+                    }}
+                >
                     {link.text}
                 </a>
             );
@@ -50,16 +85,16 @@ function Navbar() {
     };
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 p-4 pointer-events-none">
+        <header className="fixed top-0 left-0 right-0 z-50 p-4 pointer-events-none bg-transparent">
              {/* Apply background tint using arbitrary value */}
-            <div className="container mx-auto bg-clip-padding backdrop-filter backdrop-blur-md bg-[#0C1821]/60 text-slate-200 rounded-xl border border-white/10 shadow-lg p-3 md:px-6 pointer-events-auto flex justify-between items-center">
+            <div className="container mx-auto bg-clip-padding backdrop-filter backdrop-blur-md bg-[#0C1821]/60 text-slate-200 rounded-xl border border-[#89FFAA]/30 shadow-lg p-3 md:px-6 pointer-events-auto flex justify-between items-center">
                 {/* Logo */}
                 <div className="text-2xl font-semibold text-slate-200">
-                    <a href="#home">Banele.</a>
+                    <a href="#home" aria-label="Home">Banele.</a>
                 </div>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden md:flex flex-grow justify-center space-x-8">
+                <nav className="hidden md:flex flex-grow justify-center space-x-8" aria-label="Main Navigation">
                    {navLinks.map(link => renderNavLink(link, false))}
                 </nav>
 
