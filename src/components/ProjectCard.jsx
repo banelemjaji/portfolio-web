@@ -1,4 +1,3 @@
-// src/components/ProjectCard.jsx
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -50,7 +49,7 @@ function ProjectCard({ title, description, technologies, githubLink, imageUrl })
 
         {/* Technologies Used */}
         <div className="mb-4">
-          <p className="text-xs text-slate-400 mb-2 font-medium uppercase tracking-wider">Technologies:</p>
+          <p className="text-xs text-slate-400 mb-2 font-medium uppercase tracking-wider">Tech Stacks:</p>
           <div className="flex flex-wrap gap-2">
             {technologies.map((tech) => (
               <span
