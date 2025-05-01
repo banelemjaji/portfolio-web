@@ -1,4 +1,3 @@
-// src/components/Contact.jsx
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
