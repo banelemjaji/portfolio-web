@@ -16,23 +16,23 @@ function Hero() {
         <div className="text-center md:text-left flex-1 max-w-2xl">
           {/* Use slate-200 and arbitrary accent color */}
           <h1 className="text-4xl md:text-5xl font-semibold text-slate-200 mb-2">
-            Hi there! I'm <span className="text-[#89FFAA]">Banele Mjaji</span>,
+            Hi there! I'm Banele Mjaji,
           </h1>
           {/* Use slate-400 and arbitrary accent color */}
-          <h2 className="text-2xl md:text-3xl font-normal text-slate-400 mb-4 min-h-[2.5em]">
+          <h2 className="text-2xl md:text-3xl font-normal mb-4 min-h-[2.5em]">
             a <span className="text-[#89FFAA] font-medium">Full Stack Developer</span>
           </h2>
 
           {/* Paragraphs */}
           <div className="space-y-4">
             {/* Use slate-200 for text */}
-            <p className="text-base md:text-lg text-slate-200 leading-relaxed">
+            <p className="text-sm md:text-base text-slate-200 leading-relaxed">
               I build full-stack web applications and mobile apps, taking ideas from whiteboard sketches to deployed reality.
             </p>
-            <p className="text-base md:text-lg text-slate-200 leading-relaxed">
+            <p className="text-sm md:text-base text-slate-200 leading-relaxed">
               I genuinely enjoy the puzzle of software development figuring out how to make things work efficiently and effectively.
             </p>
-            <p className="text-base md:text-lg text-slate-200 leading-relaxed">
+            <p className="text-sm md:text-base text-slate-200 leading-relaxed">
               My goal is always to create something genuinely useful, you know, making the world a better place...through clean code and optimal algorithms, naturally.
             </p>
           </div>
