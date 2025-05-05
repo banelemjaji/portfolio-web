@@ -6,12 +6,25 @@ import { skillIcons, addPropsToSvg } from './SkillIcons';
 // Define the list of skills you want to show, matching keys in skillIcons object
 // Make sure the keys here EXACTLY match the keys in your skillIcons object (case-sensitive)
 const skillsToShow = [
-    'HTML5', // Key in skillIcons is 'html' (lowercase)
-    'CSS3',  // Key in skillIcons is 'css' (lowercase)
-    'JavaScript', // Key in skillIcons is 'JavaScript' (camelCase)
-    'Java', // Key in skillIcons is 'Java' (camelCase)
-    'Python', 
-    'NodeJS' 
+    // Frontend
+    'HTML5',
+    'CSS3',
+    'TailwindCSS',
+    'JavaScript',
+    'ReactJS',
+    // Backend
+    'NodeJS',
+    'ExpressJS',
+    'Python',
+    'Java',
+    'CSharp',
+    'SQLite',
+    'MongoDB',
+    'Firebase',
+    // Tools/Other
+    'Git',
+    'Figma',
+    'Flutter',
 ];
 
 function Skills() {
