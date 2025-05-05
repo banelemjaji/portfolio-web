@@ -8,7 +8,7 @@ import BlogPost from '../components/BlogPost.jsx';
 // Blog posts configuration
 const blogPosts = [
   {
-    // filename: 'steve-jobs-art-of-innovation.md',
+    // filename: '',
   },
   // Add more posts here as you add more markdown files
 ];

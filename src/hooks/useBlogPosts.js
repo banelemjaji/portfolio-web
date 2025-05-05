@@ -37,7 +37,7 @@ export function useBlogPosts(postsList) {
             slug: post.filename.replace(/\.md$/, '')
           };
         } catch (err) {
-          console.error(`Error loading ${post.filename}:`, err);
+         // console.error(`Error loading ${post.filename}:`, err);
           return null;
         }
       })
