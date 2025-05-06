@@ -63,7 +63,7 @@ function Contact() {
     <section id="contact" className="py-20 px-4 md:px-10 bg-[#0C1821]">
       <div className="container mx-auto max-w-3xl"> {/* Centered container */}
         {/* Section Title */}
-        <h2 className="text-3xl md:text-4xl font-semibold text-center text-slate-100 mb-6">
+        <h2 className="text-2xl md:text-3xl font-semibold text-center text-slate-100 mb-6">
           Get In <span className="text-[#89FFAA]">Touch</span>
         </h2>
         {/* Description */}
@@ -113,7 +113,7 @@ function Contact() {
               value={formData.message}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 bg-[#172A3A] border border-slate-700 rounded-md text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#89FFAA] focus:border-transparent transition duration-200 resize-none" // Added resize-none
+              className="w-full px-3 py-2 bg-[#172A3A] rounded-md text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-[#89FFAA] transition duration-200 border-none resize-none"
               placeholder="Your message here..."
             ></textarea>
           </div>
@@ -130,11 +130,11 @@ function Contact() {
             {/* Submit Button */}
             <button
               type="submit"
-              disabled={isSubmitting} // Disable button while submitting
-              className={`inline-flex items-center justify-center px-8 py-2.5 border-2 border-[#89FFAA] rounded font-medium transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#89FFAA] focus:ring-offset-2 focus:ring-offset-[#0C1821] ${
+              disabled={isSubmitting}
+              className={`inline-flex items-center justify-center px-6 py-2 border border-[#89FFAA] rounded text-[#89FFAA] font-medium focus:outline-none focus:ring-1 focus:ring-[#89FFAA] transition-all duration-200 ${
                 isSubmitting
-                  ? 'bg-slate-600 text-slate-400 border-slate-600 cursor-not-allowed' // Disabled style
-                  : 'bg-transparent text-[#89FFAA] hover:bg-[#89FFAA] hover:text-[#0C1821] hover:-translate-y-0.5' // Normal style
+                  ? 'bg-slate-600 text-slate-400 border-slate-600 cursor-not-allowed'
+                  : 'bg-transparent hover:bg-[#89FFAA]/10'
               }`}
             >
               {isSubmitting ? 'Sending...' : 'Send Message'}

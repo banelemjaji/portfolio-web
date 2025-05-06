@@ -1,10 +1,6 @@
-// src/components/Skills.jsx
 import React from 'react';
-// Assuming SkillIcons.js is in src/data/
 import { skillIcons, addPropsToSvg } from './SkillIcons';
 
-// Define the list of skills you want to show, matching keys in skillIcons object
-// Make sure the keys here EXACTLY match the keys in your skillIcons object (case-sensitive)
 const skillsToShow = [
     // Frontend
     'HTML5',
@@ -41,7 +37,7 @@ function Skills() {
 
         {/* Using the Star Wars description you provided */}
         <p className="text-center text-slate-300 text-sm md:text-base max-w-3xl mx-auto mb-16 leading-relaxed">
-          I find the lack of clean code disturbing. Below is the tech stack I use to build web applications faster than the Millennium Falcon on the Kessel Run. Hopefully.
+          I find the lack of clean code disturbing. These are languages, frameworks, and tools I have used or am currently learning. I’m always exploring.
         </p>
 
         {/* Icon Grid - Adjusted grid columns and gap */}

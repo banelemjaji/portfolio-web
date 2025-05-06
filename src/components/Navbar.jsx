@@ -24,7 +24,7 @@ function Navbar() {
         // Define base classes and apply colors directly
         const baseClasses = "relative transition-colors duration-300";
         // Use arbitrary values for text colors and accent hover/underline
-        const desktopClasses = `${baseClasses} text-slate-200 hover:text-[#89FFAA] focus:text-[#89FFAA] after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-[#89FFAA] after:transition-all after:duration-300 hover:after:w-full focus:after:w-full focus:outline-none`;
+        const desktopClasses = `${baseClasses} text-slate-200 hover:text-[#89FFAA] focus:text-[#89FFAA]`;
         const mobileClasses = `${baseClasses} block text-center py-3 px-4 text-slate-200 hover:bg-white/10 hover:text-[#89FFAA] focus:text-[#89FFAA] focus:outline-none`;
 
         const classes = isMobile ? mobileClasses : desktopClasses;
@@ -85,9 +85,8 @@ function Navbar() {
     };
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 p-4 pointer-events-none bg-transparent">
-             {/* Apply background tint using arbitrary value */}
-            <div className="container mx-auto bg-clip-padding backdrop-filter backdrop-blur-md bg-[#0C1821]/60 text-slate-200 rounded-xl border border-[#89FFAA]/30 shadow-lg p-3 md:px-6 pointer-events-auto flex justify-between items-center">
+        <header className="fixed top-0 left-0 right-0 z-50 py-4 px-8 bg-[#0C1821] pointer-events-auto">
+            <div className="container mx-auto text-slate-200 flex justify-between items-center">
                 {/* Logo */}
                 <div className="text-2xl font-semibold text-slate-200">
                     <a href="#home" aria-label="Home">Banele.</a>

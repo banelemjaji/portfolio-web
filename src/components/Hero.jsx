@@ -9,18 +9,17 @@ function Hero() {
 
   return (
     // Use arbitrary background color
-    <section id="home" className="flex items-center justify-center min-h-[calc(100vh-5rem)] bg-[#0C1821] py-16 px-4 md:px-10 overflow-hidden">
+    <section id="home" className="flex items-center justify-center min-h-[calc(100vh-5rem)] bg-[#0C1821] pb-0 px-4 md:px-10 overflow-hidden">
       <div className="container mx-auto flex flex-col-reverse md:flex-row items-center justify-around gap-10 max-w-6xl">
 
         {/* Content */}
         <div className="text-center md:text-left flex-1 max-w-2xl">
           {/* Use slate-200 and arbitrary accent color */}
-          <h1 className="text-4xl md:text-5xl font-semibold text-slate-200 mb-2">
-            Hi there! I'm Banele Mjaji,
+          <h1 className="text-3xl md:text-4xl font-semibold text-slate-200 mb-2">
+            Hi, I'm Banele Mjaji
           </h1>
-          {/* Use slate-400 and arbitrary accent color */}
-          <h2 className="text-2xl md:text-3xl font-normal mb-4 min-h-[2.5em]">
-            a <span className="text-[#89FFAA] font-medium">Full Stack Developer</span>
+          <h2 className="text-xl md:text-2xl font-normal mb-4">
+            <span className="text-[#89FFAA] font-medium">Full Stack Developer</span>
           </h2>
 
           {/* Paragraphs */}
@@ -38,13 +37,12 @@ function Hero() {
           </div>
 
           {/* Buttons */}
-          <div className="flex justify-center md:justify-start gap-4 flex-wrap mt-8">
-            {/* Use arbitrary accent and background colors */}
+          <div className="flex justify-center md:justify-start gap-3 flex-wrap mt-8">
             <a
               href={resumePdf}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-2 border-2 border-[#89FFAA] rounded bg-transparent text-[#89FFAA] font-medium transition-all duration-300 ease-in-out hover:bg-[#89FFAA] hover:text-[#0C1821] hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#89FFAA] focus:ring-offset-2 focus:ring-offset-[#0C1821]"
+              className="inline-flex items-center px-5 py-1.5 border border-[#89FFAA] rounded text-[#89FFAA] text-sm font-medium hover:bg-[#89FFAA]/10 focus:outline-none focus:ring-1 focus:ring-[#89FFAA]"
             >
               Resume
             </a>
@@ -53,7 +51,7 @@ function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="inline-flex items-center justify-center px-4 py-2 border-2 border-[#89FFAA] rounded bg-transparent text-[#89FFAA] transition-all duration-300 ease-in-out hover:bg-[#89FFAA] hover:text-[#0C1821] hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#89FFAA] focus:ring-offset-2 focus:ring-offset-[#0C1821]"
+              className="inline-flex items-center px-3 py-1.5 border border-[#89FFAA] rounded text-[#89FFAA] hover:bg-[#89FFAA]/10 focus:outline-none focus:ring-1 focus:ring-[#89FFAA]"
             >
               <FontAwesomeIcon icon={faGithub} className="h-5 w-5" />
             </a>
@@ -62,25 +60,22 @@ function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="inline-flex items-center justify-center px-4 py-2 border-2 border-[#89FFAA] rounded bg-transparent text-[#89FFAA] transition-all duration-300 ease-in-out hover:bg-[#89FFAA] hover:text-[#0C1821] hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#89FFAA] focus:ring-offset-2 focus:ring-offset-[#0C1821]"
+              className="inline-flex items-center px-3 py-1.5 border border-[#89FFAA] rounded text-[#89FFAA] hover:bg-[#89FFAA]/10 focus:outline-none focus:ring-1 focus:ring-[#89FFAA]"
             >
               <FontAwesomeIcon icon={faLinkedin} className="h-5 w-5" />
             </a>
           </div>
         </div>
 
-        <div className="relative flex-shrink-0 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+        <div className="relative flex-shrink-0 w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72">
           <img
             src={profilePic}
             alt="Banele Mjaji - Profile Picture"
-            className="w-full h-full rounded-full object-cover border-4 md:border-[5px] border-[#89FFAA] shadow-lg shadow-[#89FFAA]/20" // Removed transition and hover classes
+            className="w-full h-full rounded-full object-cover"
           />
-          {/* --- ADJUSTED STATUS INDICATOR SIZE --- */}
-          <div className="absolute bottom-3 right-3 md:bottom-4 md:right-4 flex items-center gap-2 bg-[#0C1821]/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/10 shadow-md"> {/* Increased py */}
-            {/* Green pulsing dot - Increased size */}
-            <span className="w-3 h-3 bg-[#05ff3f] rounded-full animate-pulse"></span>
-            {/* Text - Increased size */}
-            <span className="text-sm text-slate-200 font-medium">Available for work</span>
+          <div className="absolute bottom-3 right-3 md:bottom-4 md:right-4 flex items-center gap-2 bg-[#172A3A]/90 px-2 py-1 rounded-full">
+            <span className="w-2.5 h-2.5 bg-[#05ff3f] rounded-full animate-pulse"></span>
+            <span className="text-xs text-slate-200 font-medium">Available for work</span>
           </div>
         </div>
         {/* --- END OF IMAGE AND STATUS INDICATOR SECTION --- */}

@@ -1,37 +1,25 @@
 import React from 'react';
 import ProjectCard from './ProjectCard'; 
-// --- Project Data ---
-// IMPORTANT: Replace placeholder imageUrls with actual paths to your images
-// e.g., import barberShopImg from '../assets/images/barbershop_app.jpg';
-// and use barberShopImg in the object below.
+
 const projectsData = [
   {
-    title: "BarberShop App",
-    description: "A booking app for appointment bookings and management.",
-    technologies: ["Java", "Firebase", "Android"],
-    githubLink: "https://github.com/banelemjaji/barbershop_project",
-    liveLink: "https://barbershop-demo.example.com", // Replace with actual live link or null
-    imageUrl: null // Replace with actual image import or URL
+    title: "Car Rental App",
+    description: "A modern car rental platform that allows users to browse available vehicles, make reservations, and manage their bookings online. The application is designed for a seamless and intuitive experience, streamlining the entire car rental process for both customers and administrators.",
+    technologies: ["React","TailwindCSS", "Node.js", "Express", "MongoDB"],
+    githubLink: "https://github.com/banelemjaji/car-rental",
+    liveLink: "https://car-rental-frontend-g4rb.onrender.com", 
+    imageUrl: "src/assets/images/car-rental.png" 
   },
   {
     title: "File Organizer",
-    description: "Automatically organize files based on their content.",
-    technologies: ["Python", "Automation"],
+    description: "A modern, user-friendly desktop application for automatically organizing files into categorized folders.",
+    technologies: ["Python", "Tkinter"],
     githubLink: "https://github.com/banelemjaji/file-organizer",
-    liveLink: null, // No live link
-    imageUrl: null // Replace with actual image import or URL
+    liveLink: null,
+    imageUrl: "src/assets/images/file-organizer.png"
   },
-  {
-    title: "Bus App | In-Progress",
-    description: "A bus tracking app built using Flutter with real-time updates.",
-    technologies: ["Flutter", "Dart", "Firebase"], // Added Firebase assumption
-    githubLink: "https://github.com/banelemjaji/bus_app",
-    liveLink: null, // No live link
-    imageUrl: null // Replace with actual image import or URL
-  },
-  // Add more projects here if you have them
+  
 ];
-// --- End Project Data ---
 
 function Projects() {
   return (
