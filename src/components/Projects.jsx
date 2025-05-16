@@ -3,7 +3,7 @@ import React from 'react';
 const projectsData = [
   {
     title: "Car Rental App",
-    description: "A modern car rental platform that allows users to browse available vehicles, make reservations, and manage their bookings online. The application is designed for a seamless and intuitive experience, streamlining the entire car rental process for both customers and administrators.",
+    description: "A user-friendly web platform for renting cars online. It allows customers to quickly find available vehicles, book them, and manage their rental details in one place.",
     technologies: ["React","TailwindCSS", "Node.js", "Express", "MongoDB"],
     githubLink: "https://github.com/banelemjaji/car-rental",
     liveLink: "https://car-rental-frontend-g4rb.onrender.com", 
@@ -18,11 +18,11 @@ const projectsData = [
     imageUrl: "/images/file-organizer.png"
   },
   {
-    title: "Fitness Tracker Design",
-    description: "",
+    title: "FitQuest Design",
+    description: "FitQuest is a mobile application designed to help users track their fitness activities and achieve their goals. It allows users to record workouts, monitor their progress (steps, distance, time, calories), and set personalized goals.",
     technologies: ["Figma"],
-    githubLink: "https://github.com/banelemjaji/file-organizer",
-    liveLink: null,
+    githubLink: null,
+    liveLink: "https://www.figma.com/design/PZEQwbDvK3KAzBcilPLeOZ/FitQuest?node-id=0-1&t=crN0zJJVQ4SQAWfY-1",
     imageUrl: "/images/fitness1.png"
   },
 ];

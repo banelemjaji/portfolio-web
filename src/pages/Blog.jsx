@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
-// Custom components and hooks
+
 import { useBlogPosts } from '../hooks/useBlogPosts';
 import BlogPostCard from '../components/BlogPostCard.jsx';
 import BlogPost from '../components/BlogPost.jsx';
 
-// Blog posts configuration
+
 const blogPosts = [
   {
-    filename: 'introduction-to-react.md',
+    //filename: 'introduction-to-react.md',
   },
   // Add more posts here as you add more markdown files
 ];
