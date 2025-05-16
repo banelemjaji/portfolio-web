@@ -8,7 +8,7 @@ import BlogPost from '../components/BlogPost.jsx';
 // Blog posts configuration
 const blogPosts = [
   {
-    // filename: '',
+    filename: 'introduction-to-react.md',
   },
   // Add more posts here as you add more markdown files
 ];

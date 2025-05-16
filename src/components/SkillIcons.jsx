@@ -1,17 +1,17 @@
-// src/data/SkillIcons.js
-import React from 'react'; // Needed for JSX and React methods
 
-// Helper function to add props (like className) to SVG JSX elements
+import React from 'react'; 
+
+
 const addPropsToSvg = (svgJsx, props) => {
   if (React.isValidElement(svgJsx)) {
-    // Clone the element, merging existing props with new props
+    
     return React.cloneElement(svgJsx, { ...svgJsx.props, ...props });
   }
-  return svgJsx; // Return as is if not a valid React element
+  return svgJsx; 
 };
 
-// Object containing your SVG icons
-// Using the exact SVG JSX you provided
+
+
 export const skillIcons = {
     Java: {
         light: (<svg width="800px" height="800px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,7 +43,7 @@ export const skillIcons = {
             </defs>
             </svg>)
     },
-    NodeJS: { // Corrected casing from NodeJS to NodeJs if needed, check key usage
+    NodeJS: { 
         light: (
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 256 256">
             <rect width="256" height="256" fill="none" rx="60" />
@@ -164,6 +164,6 @@ export const skillIcons = {
 
 };
 
-// Export the helper function
+
 export { addPropsToSvg };
 

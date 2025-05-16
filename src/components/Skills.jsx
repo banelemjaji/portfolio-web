@@ -24,7 +24,6 @@ const skillsToShow = [
 ];
 
 function Skills() {
-  // Using 'light' theme variant from your skillIcons object
   const theme = 'light';
 
   return (
@@ -35,21 +34,16 @@ function Skills() {
         <span className="text-[#89FFAA]">Skills</span>
         </h2>
 
-        {/* Using the Star Wars description you provided */}
         <p className="text-center text-slate-300 text-sm md:text-base max-w-3xl mx-auto mb-16 leading-relaxed">
           I find the lack of clean code disturbing. These are languages, frameworks, and tools I have used or am currently learning. I’m always exploring.
         </p>
 
-        {/* Icon Grid - Adjusted grid columns and gap */}
         <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-x-6 gap-y-12 justify-center" aria-label="Skills Grid">
           {skillsToShow.map((skillName) => {
-            // Attempt to find the icon data using the skillName as the key
-            const iconData = skillIcons[skillName]; // Case-sensitive match
+            const iconData = skillIcons[skillName];
 
-            // Graceful handling if icon data is not found
             if (!iconData) {
               console.warn(`Icon data for "${skillName}" not found in skillIcons object.`);
-              // Optionally render a placeholder or nothing
               return (
                  <div key={skillName} className="relative flex flex-col items-center group text-xs text-red-500">
                     Icon missing: {skillName}
@@ -57,12 +51,10 @@ function Skills() {
               );
             }
 
-            // Select the SVG based on theme (using 'light' as default)
-            let svgToRender = iconData[theme] || iconData.light; // Assuming 'light' exists
+            let svgToRender = iconData[theme] || iconData.light;
 
             if (!svgToRender) {
                  console.warn(`Suitable SVG for "${skillName}" (theme: ${theme}) not found.`);
-                 // Optionally render a placeholder or nothing
                  return (
                     <div key={skillName} className="relative flex flex-col items-center group text-xs text-red-500">
                        SVG missing: {skillName}
@@ -70,15 +62,12 @@ function Skills() {
                  );
             }
 
-            // Apply size class using the helper function
             const sizedSvg = addPropsToSvg(svgToRender, {
-                className: "w-10 h-10 sm:w-12 sm:h-12 text-[#89FFAA]" // Icon size and color (applied via fill/stroke in SVG usually)
+                className: "w-10 h-10 sm:w-12 sm:h-12 text-[#89FFAA]"
             });
 
             return (
-              // Outer wrapper for positioning and group hover state
               <div key={skillName} className="relative flex flex-col items-center group">
-                {/* Icon Box (Using a slightly lighter dark bg) */}
                 <div
                   className="
                     bg-[#172A3A] rounded-lg p-3 sm:p-4 border border-white/10 shadow-md
@@ -89,11 +78,9 @@ function Skills() {
                   tabIndex={0}
                   aria-label={skillName}
                 >
-                  {/* Icon */}
                   {sizedSvg}
                 </div>
 
-                {/* Skill Name - Appears on hover */}
                 <span
                   className="
                     absolute -bottom-7 left-1/2 -translate-x-1/2 /* Adjusted bottom position */
@@ -104,13 +91,12 @@ function Skills() {
                 >
                   {skillName}
                 </span>
-              </div> // End Outer Wrapper
+              </div> 
             );
           })}
-        </div> {/* End Grid */}
-
-      </div> {/* End Container */}
-    </section> /* End Section */
+        </div>
+      </div>
+    </section>
   );
 }
 

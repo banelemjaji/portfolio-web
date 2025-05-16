@@ -12,7 +12,6 @@ import "prismjs/components/prism-python";
 import "prismjs/components/prism-java";
 
 const BlogPost = ({ post, content, onBack }) => {
-  // Initialize syntax highlighting when content loads
   useEffect(() => {
     if (content) {
       setTimeout(() => {

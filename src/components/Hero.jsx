@@ -8,13 +8,10 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 function Hero() {
 
   return (
-    // Use arbitrary background color
-    <section id="home" className="flex items-center justify-center min-h-[calc(100vh-5rem)] bg-[#0C1821] pb-0 px-4 md:px-10 overflow-hidden">
+    <section id="home" className="flex items-center justify-center min-h-[calc(100vh-5rem)] bg-[#0C1821] px-4 md:px-10 overflow-hidden">
       <div className="container mx-auto flex flex-col-reverse md:flex-row items-center justify-around gap-10 max-w-6xl">
 
-        {/* Content */}
         <div className="text-center md:text-left flex-1 max-w-2xl">
-          {/* Use slate-200 and arbitrary accent color */}
           <h1 className="text-3xl md:text-4xl font-semibold text-slate-200 mb-2">
             Hi, I'm Banele Mjaji
           </h1>
@@ -22,9 +19,7 @@ function Hero() {
             <span className="text-[#89FFAA] font-medium">Full Stack Developer</span>
           </h2>
 
-          {/* Paragraphs */}
           <div className="space-y-4">
-            {/* Use slate-200 for text */}
             <p className="text-sm md:text-base text-slate-200 leading-relaxed">
               I build full-stack web applications and mobile apps, taking ideas from whiteboard sketches to deployed reality.
             </p>
@@ -36,7 +31,6 @@ function Hero() {
             </p>
           </div>
 
-          {/* Buttons */}
           <div className="flex justify-center md:justify-start gap-3 flex-wrap mt-8">
             <a
               href={resumePdf}
@@ -78,8 +72,6 @@ function Hero() {
             <span className="text-xs text-slate-200 font-medium">Available for work</span>
           </div>
         </div>
-        {/* --- END OF IMAGE AND STATUS INDICATOR SECTION --- */}
-
       </div>
     </section>
   );

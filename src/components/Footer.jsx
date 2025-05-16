@@ -1,11 +1,9 @@
-// src/components/Footer.jsx
 import React from 'react';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    // Use arbitrary background color and text-slate-400 for secondary text
     <footer className="bg-[#0C1821] text-slate-400 text-center p-4 mt-16" aria-label="Footer">
       <p className="text-xs">
         &copy; {currentYear} | Made with ❤️ by{' '}

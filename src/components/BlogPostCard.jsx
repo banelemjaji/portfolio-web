@@ -13,7 +13,6 @@ const BlogPostCard = ({ post, onClick }) => {
       }}
       className="cursor-pointer rounded-xl overflow-hidden transition-all duration-300 border border-white/10 shadow hover:shadow-lg hover:border-[#89FFAA] hover:shadow-[#89FFAA]/10 hover:translate-y-[-2px] group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#89FFAA] flex flex-col min-h-[380px]"
     >
-      {/* Dark overlay gradient at the bottom */}
       <div className="relative h-40 overflow-hidden bg-gradient-to-b from-gray-900 to-[#0c1620]">
         <div className="absolute inset-0 flex items-center justify-center text-gray-400 opacity-30">
           <svg
